@@ -15,11 +15,7 @@ const TemplateExpression =() => {
             <p>{console.log("JSX React")}</p>
         </div>
 
-
     )
-
-
-
 }
 
 export default TemplateExpression
