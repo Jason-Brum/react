@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import City from "./assets/city.jpg"
 import ManageData from './components/ManageData';
+import ListRender from './components/ListRender';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <img src={City} alt="Foto da cidade de Hamburgo" />
       </div>
       <ManageData />
+      <ListRender />
     </div>
   );
 }
