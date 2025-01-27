@@ -5,8 +5,8 @@ const ListRender = () => {
 
     const[products] = useState ([
         {id: 1, model: "Run", size: 41},
-        {id: 2154, model: "Tracker", size: 40},
-        {id: 1568, model: "Fast", size: 39},
+        {id: 2, model: "Tracker", size: 40},
+        {id: 3, model: "Fast", size: 39},
 
     ]);
     return (
