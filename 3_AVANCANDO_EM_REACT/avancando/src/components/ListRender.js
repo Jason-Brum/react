@@ -13,7 +13,7 @@ const ListRender = () => {
     const deleteRandom = () => {
         const randomNumber = Math.floor(Math.random() * 4);
 
-        setUsers((prevProducts) => {
+        setProducts((prevProducts) => {
 
             return prevProducts.filter((product) => randomNumber !== product.id)
 
