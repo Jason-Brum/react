@@ -20,8 +20,10 @@ const cars = [
 
 const users = [
   {id: 1, name: "Jason", city: "Rio de Janeiro" , gender: "Masc", age: 47 },
-{id: 2, name: "Pâmela", city: "Maceió" , gender: "Fem", age: 39 },
+  {id: 2, name: "Pâmela", city: "Maceió" , gender: "Fem", age: 39 },
   {id: 3, name: "Murilo", city: "Curitiba" , gender: "Masc", age: 38 },
+  {id: 3, name: "Enzo", city: "São Paulo" , gender: "Masc", age: 17},
+
 
 ];
 

@@ -7,6 +7,7 @@ const UserDetails = ({name, city, gender, age}) => {
         <p>Cidade: {city}</p>
         <p>Gênero: {gender}</p>
         <p>Idade: {age}</p>
+        {age >= 18 ? (<p>Apto a tirar carteira de habilitação</p>) : (<p>Menor de idade</p>)}
 
 
 
