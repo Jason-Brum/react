@@ -9,6 +9,8 @@ import CarDetails from './components/CarDetails';
 import Fragment from './components/Fragment';
 import Container from './components/Container';
 import UserDetails from './components/UserDetails';
+import { useState } from 'react';
+import ChangeMessageState from './components/ChangeMessageState';
 
 function App() {
 const name = "Zé"
@@ -27,7 +29,16 @@ const users = [
 
 ];
 
-  return (
+function showMessage () {
+  console.log("Eventoo do componente pai")
+}
+
+const [message, setMessage] = useState ("")
+
+const handleMessage = (msg) => {
+  setMessage(msg);
+}
+return (
     <div className="App">
       <h1>Avançando em React</h1>
       {/*Imagem localizada em public*/}
@@ -51,6 +62,7 @@ const users = [
       {/*loop em array de objetos*/}
       {cars.map((car) => (
         <CarDetails 
+        key={car.id}
         brand={car.brand} 
         color={car.color} 
         km={car.km} 
@@ -65,6 +77,12 @@ const users = [
         <p>Este é o conteúdo</p>    
       </Container>
 
+      {/*executar função */}
+      <ExecuteFunction myFunction={showMessage} />
+
+      {/*state lift */}
+      <Message msg = {message} />
+      <ChangeMessageState handleMessage={handleMessage} />
 
       {/* desafio */}
       {users.map((user) => (
