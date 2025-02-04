@@ -11,6 +11,10 @@ import Container from './components/Container';
 import UserDetails from './components/UserDetails';
 import { useState } from 'react';
 import ChangeMessageState from './components/ChangeMessageState';
+import Message from './components/Message';
+import ExecuteFunction from './components/ExecuteFunction';
+
+
 
 function App() {
 const name = "Zé"
@@ -79,6 +83,7 @@ return (
 
       {/*executar função */}
       <ExecuteFunction myFunction={showMessage} />
+
 
       {/*state lift */}
       <Message msg = {message} />
