@@ -196,21 +196,21 @@ const tenis = new Produto("Tênis verde", 120)
 console.log(tenis.produtoComDesconto(20))
 
 // 9 - Herança
-class produtoComDesconto extends Produto {
+class ProdutoComAtributos extends Produto {
     constructor(name, price, colors){
         super(name, price)
-        this.color = colors
+        this.colors = colors
     }
 
     showColors() {
         console.log("As cores são: ")
-        this.colors.forEach((color) =>{
-            console.log(color)
+        this.colors.forEach((a) =>{
+            console.log(a)
         })
     }
 }
 
-const hat = new ProductWithAttributes("Chapéu", 29.99, ["Preto", "Azul", "Verde"])
+const hat = new ProdutoComAtributos("Chapéu", 29.99, ["Preto", "Azul", "Verde"])
 
 console.log(hat.name)
 console.log(hat.produtoComDesconto(30))
