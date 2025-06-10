@@ -13,23 +13,7 @@ services:
       - MONGO_INITDB_ROOT_USERNAME=jason
       - MONGO_INITDB_ROOT_PASSWORD=ly61Ni8XOcwngaEv
 
-  # Serviço da sua API Node.js
-  api:
-    build: . # Constrói a imagem a partir do Dockerfile na pasta atual
-    container_name: api_reactgram
-    ports:
-      - "5000:5000" # Mapeia a porta da sua API
-    volumes:
-      - .:/app # Monta o diretório atual na pasta /app do contêiner para refletir mudanças no código em tempo real
-      - /app/node_modules # Garante que a pasta node_modules de dentro do contêiner não seja sobrescrita pela do seu computador
-    environment:
-      - PORT=5000
-      - DB_USER=jason
-      - DB_PASSWORD=ly61Ni8XOcwngaEv
-      - DB_HOST=db # IMPORTANTE: 'db' é o nome do serviço do MongoDB definido acima. O Docker cuidará da rede!
-      - JWT_SECRET=seu_segredo_jwt_aqui # Adicione seu segredo JWT aqui
-    depends_on:
-      - db # Diz ao Docker para iniciar o serviço 'db' antes de iniciar a 'api'
+  
 
 volumes:
   mongodb_data: # Define o volume nomeado para persistência de dados

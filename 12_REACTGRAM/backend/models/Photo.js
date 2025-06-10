@@ -6,7 +6,11 @@ const photoSchema = new Schema({
     title: String,
     likes: Array,
     comments: Array,
-    userId: mongoose.ObectId,
+    userId: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        required: true // É uma boa ideia garantir que toda foto tenha um usuário
+    },
     userName: String,
 
 },  {
