@@ -1,5 +1,6 @@
 const {body} = require('express-validator');
 const photoInsertValidation = () => {
+    console.log('Validando inserção de foto...');
     
     return [
         body('title')
@@ -19,5 +20,19 @@ const photoInsertValidation = () => {
     ];
 };
 
+const photoUpdateValidation = () => {
+    return [
+        body('title')
+            .optional()
+            .isString()
+            .withMessage('O título precisa ser um texto.')
+            .isLength({min: 3})
+            .withMessage('O título deve ter pelo menos 3 caracteres.'),
+    ];
+}
 
-module.exports = photoInsertValidation;
+
+module.exports = {
+    photoInsertValidation,
+    photoUpdateValidation
+};
