@@ -5,6 +5,9 @@ import './App.css'
 
 import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
+//Hooks
+import { useAuth } from './hooks/useAuth'
+
 //Components
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
@@ -15,19 +18,25 @@ import Login from './pages/Auth/Login'
 import Register from './pages/Auth/Register'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const {auth, loading} = useAuth()
+
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
 
   return (
     <>
       <div className="App">
         <BrowserRouter> 
         <NavBar />
+        <div className = "container">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />}  />
-          <Route path="/register" element={<Register />} />
+          <Route path="/" element={auth ? <Home /> : <Navigate to = "/login" />} />
+          <Route path="/login" element={!auth ? <Login /> : <Navigate to = "/" />}  />
+          <Route path="/register" element={!auth ? <Register /> : <Navigate to = "/" />} />
 
         </Routes>
+        </div>
         <Footer />
         </BrowserRouter>
       </div>
